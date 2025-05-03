@@ -1,0 +1,43 @@
+root@topeet:~/18]# cd ../19/
+[root@topeet:~/19]# ls
+app  module
+[root@topeet:~/19]# insmod module/mutex.ko 
+[  757.700524] alloc_chrdev_region is ok
+[  757.700603] major is 236
+9]# 57.700612] minor is[r oot@topeet:~/10
+
+[root@topeet:~/19]# ls /dev/device_test 
+/dev/device_test
+[root@topeet:~/19]# 
+[root@topeet:~/19]# ./app/app /dev/device_test topeet
+[  775.479988] 
+[  775.479988] This is open_test
+
+[  779.549456] copy_from_user buf is topeet
+[  779.549571] 
+[  779.549571] This is [root@topeet:~/19]# 
+[root@torpeet:e~/19]# lease_test 
+
+[root@topeet:~/19]# 
+[root@topeet:~/19]# 
+[root@topeet:~/19]# ./app/app /dev/device_test topeet &
+[root@topeet:~/19]# [  861.945774] 
+[  861.945774] This is open_test
+
+[root@topeet:~/19]# ./app/app /dev/device_test itop &
+[root@topeet:~/19]# [  863.258076] 
+[  863.258076] This is open_test
+
+[root@topeet:~/19]# [  865.955512] copy_from_user buf is topeet
+[  865.955769] 
+[  865.955769] This is release_test 
+[  868.089031] copy_from_user buf is itop
+[  868.089201] 
+[  868.089201] This is release_test 
+
+[2]+  Done                       ./app/app /dev/device_test itop
+[1]+  Done                       ./app/app /dev/device_test topeet
+[root@topeet:~/19]# 
+[root@topeet:~/19]# rmmod module/mutex.ko 
+[  894.464440] module exit
+[root@topeet:~/19]#

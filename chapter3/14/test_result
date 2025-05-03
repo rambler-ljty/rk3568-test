@@ -1,0 +1,47 @@
+
+root@topeet:~/14]# insmod module/example.ko 
+[ 3097.262907] alloc_chrdev_region is ok
+[ 3097.263012] major is 236
+[ 3097.263019] m[root@topeet:~/14]# inor is 0
+
+[root@topeet:~/14]# ls /dev/device_test 
+/dev/device_test
+[root@topeet:~/14]# 
+[root@topeet:~/14]# ./app/app /dev/device_test topeet
+[ 3118.422569] 
+[ 3118.422569] This is open_test
+
+
+[ 3122.430449] copy_from_user buf is topeet
+[root@topeet:~/14]# 
+[root@topeet:~/14]# 
+[root@topeet:~/14]# [ 3122.430575] 
+[ 3122.430575] This is release_test 
+
+[root@topeet:~/14]# 
+[root@topeet:~/14]# 
+[root@topeet:~/14]# 
+[root@topeet:~/14]# ./app/app /dev/device_test topeet &
+[root@topeet:~/14]# [ 3152.178591] 
+[ 3152.178591] This is open_test
+
+[root@topeet:~/14]# ./app/app /dev/device_test itop &
+[root@topeet:~/14]# [ 3153.854351] 
+[ 3153.854351] This is open_test
+
+[root@topeet:~/14]# [ 3155.924218] copy_from_user buf is itop
+[ 3155.924403] 
+[ 3155.924403] This is release_test 
+[ 3156.350904] copy_from_user buf is itop
+[ 3156.351083] 
+[ 3156.351083] This is release_test 
+
+[2]+  Done                       ./app/app /dev/device_test itop
+[1]+  Done                       ./app/app /dev/device_test topeet
+[root@topeet:~/14]# 
+[root@topeet:~/14]# 
+[root@topeet:~/14]# rmmod example.ko
+[ 3181.126291] module exit
+[root@topeet:~/14]# 
+[root@topeet:~/14]# 
+

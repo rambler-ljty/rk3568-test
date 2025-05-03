@@ -1,0 +1,38 @@
+[root@topeet:~/18]# insmod module/semaphore.ko 
+[  417.356887] semaphore: loading out-of-tree module taints kernel.
+[root@topeet:~/18]# [  417.358712] alloc_chrdev_region is ok
+[  417.358781] major is 236
+[  417.358820] minor is 0
+
+[root@topeet:~/18]# 
+[root@topeet:~/18]# ls /dev/device_test 
+/dev/device_test
+[root@topeet:~/18]# 
+[root@topeet:~/18]# ./app/app /dev/device_test  topeet
+[  440.763661] 
+[  440.763661] This is open_test
+
+[  444.793244] copy_from_user buf is topeet
+[  444.793365] 
+[  444.793365[root@topeet:~/18]# ]
+[root@topeet:~/18]#  This is release_test 
+[root@topeet:~/18]# 
+[root@topeet:~/18]# 
+[root@topeet:~/18]# ./app/app /dev/device_test topeet &
+[root@topeet:~/18]# [  525.848008] 
+[  525.848008] This is open_test
+
+[root@topeet:~/18]# ./app/app /dev/device_test itop
+[  527.877501] 
+[  527.877501] This is open_test
+[  529.938201] copy_from_user buf is topeet
+[  529.938333] 
+[  529.938333] This is release_test 
+[  532.071410] copy_from_user buf is itop
+[  532.071552] 
+[  532.071552] This [1]+  Done i                      s./app/app /dev/d evice_test topeert
+eleas[root@topeet:~/18]# e_test 
+
+[root@topeet:~/18]# rmmod module/semaphore.ko 
+[  559.600338] module exit
+[root@topeet:~/18]# 
