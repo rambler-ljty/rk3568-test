@@ -1,0 +1,42 @@
+
+root@topeet:~/20/module]# insmod
+ wq.ko
+[  474.810510] wq: loading out-of-tree module taints kernel.
+[root@topeet:~/20/module]# [  474.811431] alloc_chrdev_region is ok
+[  474.811463] major is 236
+[  474.811476] minor is 0
+
+[root@topeet:~/20/module]# cd ../
+app
+[root@topeet:~/20/app]# ls
+read
+read.c
+write
+write.c
+[root@topeet:~/20/app]# ./read
+[  496.281360] 
+[  496.281360] This is open_test
+read before 
+
+[  517.468964] 
+[  517.468964] This is open_test
+buf1 is nihao    
+read after 
+[root@topeet:~/20/app]#
+
+
+
+#######  
+执行ead 后待
+
+然后
+执行 ./write
+[root@topeet:~/20/app]# ./write
+write before 
+write after 
+
+后面的结果就继续输出了
+
+(496--517)
+
+######

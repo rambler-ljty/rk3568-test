@@ -1,0 +1,26 @@
+[root@topeet:~/29/module]# insmod
+  ioctl.ko
+[ 7800.336508] alloc_chrdev_region is ok
+[ 7800.336602] major is 236
+[ 7800.336611] mi[root@tnopeet:~/29/module]# or is 0
+
+[root@topeet:~/29/module]# cd ../
+app
+[root@topeet:~/29/app]# ./iotctl
+-/bin/sh: ./iotctl: not found
+[root@topeet:~/29/app]# 
+[root@topeet:~/29/app]# ls
+ioctl
+ioctl.c
+[root@topeet:~/29/app]# ./ioctl
+[ 7821.808239] this is function_test
+[ 7822.821582] this is function_test
+[ 7823.835016] this is function_test
+[ 7826.954961] this is function_test
+[ 7830.155034] this is function_test
+[root@topeet:~/29/app]# 
+[root@topeet:~/29/app]# rmmod ioc
+tl.ko
+[ 7841.943198] module exit
+[root@topeet:~/29/app]# 
+[root@topeet:~/29/app]# 

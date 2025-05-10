@@ -1,0 +1,46 @@
+[root@topeet:~/25/module]# ls
+Makefile
+Module.symvers
+modules.order
+timer_dev.c
+timer_dev.ko
+timer_dev.mod.c
+timer_dev.mod.o
+timer_dev.o
+[root@topeet:~/25/module]# insmod
+ timer_dev.
+ko
+[ 6854.084367] alloc_chrdev_region is ok
+[ 6854.084501] major is 236
+[ 6854.084526] minor is 0
+[root@topeet:~/25/module]# 
+[root@topeet:~/25/module]# cd ../
+app
+[root@topeet:~/25/app]# ./timer
+num is 0 
+num is 1 
+num is 2 
+num is 3 
+num is 4 
+num is 5 
+num is 6 
+num is 7 
+num is 8 
+num is 9 
+num is 10 
+num is 11 
+num is 12 
+num is 13 
+num is 14 
+num is 15 
+num is 16 
+num is 17 
+num is 18 
+num is 19 
+num is 20 
+num is 21
+[root@tope^C
+[root@topeet:~/25/app]# rmmod tim
+er_dev.ko
+[ 6922.985020] module exit
+[root@topeet:~/25/app]#: 

@@ -1,0 +1,72 @@
+[root@topeet:~/21/module]# ls
+Makefile
+Module.symvers
+modules.order
+wq.c
+wq.ko
+wq.mod.c
+[root@topeet:~/21/module]# insmod
+ wq.ko 
+[ 1463.857211] alloc_chrdev_region is ok
+[ 1463.857293] major is 236
+[ 1463.857302] m[root@topeet:~/21/module]# inor is 0
+
+[root@topeet:~/21/module]# 
+[root@topeet:~/21/module]# lsmod
+Module                  Size  Used by    Tainted: G  
+wq                     16384  0 
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/21/module]# 
+[root@topeet:~/21/module]# cd ../
+app
+[root@topeet:~/21/app]# ls
+read
+read.c
+write
+write.c
+[root@topeet:~/21/app]# ./read
+read before 
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+buf1 is  
+
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+buf1 is nihao 
+
+
+
+###############
+中间执行了 ./write
+[root@topeet:~/21/app]# ./write
+write before 
+write after
+[root@topeet:~/21/app]#
+
+
+##############

@@ -1,0 +1,21 @@
+[root@topeet:~/27/module]# insmod ioctl.ko
+[ 7140.045358] alloc_chrdev_region is ok
+[ 7140.045455] major is 236
+[ 7140.045464] min[root@topeet:~/27/oodule]# r is 0
+
+[root@tope^C
+[root@topeet:~/27/app]# ls
+ioctl
+ioctl.c
+[r
+[root@topeet:~/27/app]# ./ioctl write
+[ 7183.124663] this is CMD_TEST1
+[ 7183.124750] arg is 1
+[root@topeet:~/27/app]# 
+[root@topeet:~/27/app]# ./ioctl read
+[ 7190.034255] this is CMD_TEST2
+val is 1
+[root@topeet:~/27/app]# 
+[root@topeet:~/27/app]# rmmod ioctl.ko
+[ 7209.732423] module exit
+[root@topeet:~/27/app]# 

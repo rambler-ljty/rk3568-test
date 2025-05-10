@@ -1,0 +1,69 @@
+[root@topeet:~/26/module]# insmod
+  llseek.ko
+[ 7035.446734] alloc_chrdev_region is ok
+[ 7035.446828] major is 236
+[ 7035.446837] m[root@topeet:~/26/imodule]# nor is 0
+
+[root@topeet:~/26/module]# 
+[root@topeet:~/26/module]# cd ../
+app
+[root@topeet:~/26/app]# ls
+[root@topeet:~/26/app]# ./llseek
+[ 7046.072306] mem is hello world,p is 0
+off is 13
+off is 0
+read is hello world
+off is 13
+off is -1
+off is 19
+off is 0
+read is hello world
+off is 19
+[root@topeet:~/26/app]# [ 7046.072667] buf[0] is h
+[ 7046.072681] buf[1] is e
+[ 7046.072710] buf[2] is l
+[ 7046.072723] buf[3] is l
+[ 7046.072735] buf[4] is o
+[ 7046.072745] buf[5] is  
+[ 7046.072754] buf[6] is w
+[ 7046.072764] buf[7] is o
+[ 7046.072773] buf[8] is r
+[ 7046.072782] buf[9] is l
+[ 7046.072791] buf[10] is d
+[ 7046.072802] buf[11] is 
+[ 7046.072812] buf[12] is 
+[ 7046.072821] buf[13] is 
+[ 7046.072830] buf[14] is 
+[ 7046.072839] buf[15] is 
+[ 7046.072849] buf[16] is 
+[ 7046.072858] buf[17] is 
+[ 7046.072867] buf[18] is 
+[ 7046.072876] buf[19] is 
+[ 7046.072886] mem is hello world, p is 0,count is 13
+[ 7046.075999] mem is Linux,p is 13
+[ 7046.077813] buf[0] is h
+[ 7046.077828] buf[1] is e
+[ 7046.077838] buf[2] is l
+[ 7046.077849] buf[3] is l
+[ 7046.077859] buf[4] is o
+[ 7046.077869] buf[5] is  
+[ 7046.077878] buf[6] is w
+[ 7046.077887] buf[7] is o
+[ 7046.077897] buf[8] is r
+[ 7046.077905] buf[9] is l
+[ 7046.077914] buf[10] is d
+[ 7046.077923] buf[11] is 
+[ 7046.077932] buf[12] is 
+[ 7046.077941] buf[13] is L
+[ 7046.077951] buf[14] is i
+[ 7046.077959] buf[15] is n
+[ 7046.077968] buf[16] is u
+[ 7046.077977] buf[17] is x
+[ 7046.077987] buf[18] is 
+[ 7046.077996] buf[19] is 
+[ 7046.078005] mem is hello world, p is 0,count is 19
+
+[root@topeet:~/26/app]# rmmod lls
+eek.ko
+[ 7069.042245] module exit
+[root@topeet:~/26/app]#

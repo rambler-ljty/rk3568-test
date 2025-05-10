@@ -1,0 +1,10 @@
+##1
+aarch64-linux-gnu-gcc-c dev_open.c
+aarch64-linux-gnu-gcc -c timer*.c
+##2
+aarch64-linux-gnu-ar rcs libtime.a timer*.o
+aarch64-linux-gnu-ar rcs libopen.a dev_open.o
+
+##3
+
+aarch64-linux-gnu-gcc -o ioctl ioctl.c -L./ -ltime -lopen

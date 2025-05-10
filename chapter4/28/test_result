@@ -1,0 +1,26 @@
+[root@topeet:~/28/module]# ls
+Makefile
+Module.symvers
+ioctl.c
+ioctl.ko
+ioctl.mod.c
+ioctl.mod.o
+ioctl.o
+modules.order
+[root@topeet:~/28/module]# insmod
+ ioctl.ko
+[ 7732.459171] alloc_chrdev_region is ok
+[ 7732.459259] major is 236
+[ 7732.459268] minor is 0
+[root@topeet:~/28/module]# cd ../
+app
+[root@topeet:~/28/app]# ./ioctl
+[ 7739.841785] a= 1
+[ 7739.841888] b= 2
+[ 7739.841900] c= 3
+[root@topeet:~/28/app]# 
+[root@topeet:~/28/app]# rmmod ioc
+tl
+[ 7745.761846] module exit
+[root@topeet:~/28/app]# 
+[root@topeet:~/28/app]# 

@@ -1,0 +1,21 @@
+[root@topeet:~/24/module]# 
+[root@topeet:~/24/module]# insmod
+ timer_mod.
+ko
+[root@topeet:~/24/module]# 
+[root@topeet:~/24/module]# 
+[root@topeet:~/24/module]# [ 6720.810474] this is function test
+[ 6725.930712] this is function test
+[ 6731.053929] this is function test
+[ 6736.170661] this is function test
+[ 6741.290717] this is function test
+[ 6746.410788] this is function test
+[ 6751.530842] this is function test
+[ 6756.650953] this is function test
+
+[root@topeet:~/24/module]# rmmod 
+timer_mo[ 6761.771003] this is function test
+d
+[ 6762.657795] module exit
+[root@topeet:~/24/module]# 
+[root@topeet:~/24/module]#
