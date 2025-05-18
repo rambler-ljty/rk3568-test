@@ -1,0 +1,3 @@
+ * 这是一个使用并发管理工作队列(Concurrency Managed Workqueue, CMWQ)的驱动程序示例
+ * 功能：演示如何在Linux内核中使用CMWQ机制处理中断
+ * 特点：使用alloc_workqueue创建并发管理工作队列，支持工作项的动态调度
