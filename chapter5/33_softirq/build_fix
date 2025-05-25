@@ -1,0 +1,11 @@
+####
+
+fix build error
+
+kernel/include/linux/interrupt.h
+
+add 
+
+TEST_SOFTIRQ, //添加的自定义软中断
+
+###
