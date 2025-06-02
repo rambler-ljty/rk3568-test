@@ -1,0 +1,24 @@
+[root@topeet:~/chapter6/41_platform_driver]# insmod platform_driver.ko 
+[ 1032.728654] my_platform_driver:Platform driver initialized
+[root@topeet:~/chapter6/41_platform_driver]# 
+[root@topeet:~/chapter6/41_platform_driver]# cd /sys/bus/platform/drivers/
+[root@topeet:/sys/bus/platform/drivers]# ls my_platform_device/
+bind     module/  uevent   unbind
+[root@topeet:/sys/bus/platform/drivers]# ls my_platform_device/
+bind  module  uevent  unbind
+[root@topeet:/sys/bus/platform/drivers]# cd /root/
+bak/       chapter6/  tmp/       work/
+[root@topeet:/sys/bus/platform/drivers]# cd /root/chapter6/40_platform_device/
+[root@topeet:~/chapter6/40_platform_device]# insmod platform_device.ko 
+[ 1478.275773] my_platform_probe: Probing platform device
+[root@topeet:~/chapter6/40_platform_device]# [ 1478.276534] Platform device registered
+
+[root@topeet:~/chapter6/40_platform_device]# 
+[root@topeet:~/chapter6/40_platform_device]# cd -
+/sys/bus/platform/drivers
+[root@topeet:/sys/bus/platform/drivers]# rmmod platform_driver.ko
+[ 1527.558321] my_platform_remove: Removing platform device
+[ 1527.558887] my_platform_driver: Platform driver exited
+[root@topeet:/sys/bus/platform/drivers]# rmmod platform_device.ko
+[ 1547.184109] Platform device unregistered
+[root@topeet:/sys/bus/platform/drivers]# 

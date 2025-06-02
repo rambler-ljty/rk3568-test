@@ -8,3 +8,5 @@ CHAPTER 4: 高级字符设备进阶
 
 chapter 5: 中断
 
+chapter 6: platform 平台总线
+

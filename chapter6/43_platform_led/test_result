@@ -1,0 +1,40 @@
+[root@topeet:~/chapter6/42_probe]# cd ../43_platform_led/
+[root@topeet:~/chapter6/43_platform_led]# ls
+README  app  module  test_result
+[root@topeet:~/chapter6/43_platform_led]# insmod ../40_platform_device/platform_
+device.ko 
+[ 1976.810634] Platform device registered
+[root@topeet:~/chapter6/43_platform_led]# 
+[root@topeet:~/chapter6/43_platform_led]# cd module/
+[root@topeet:~/chapter6/43_platform_led/module]# ls
+Makefile  platform_led.c  platform_led.ko
+[root@topeet:~/chapter6/43_platform_led/module]# insmod platform_led.ko 
+[ 2005.360743] alloc_chrdev_region is ok
+[ 2005.360849] major is 236
+[ 2005.360858] minor is 0
+[ 2005.362108] Platf[root@topeet:~/chapter6/43_platform_led/module]# rm driver registered
+
+[root@topeet:~/chapter6/43_platform_led/module]# cd ../app/
+[root@topeet:~/chapter6/43_platform_led/app]# ls /dev/test 
+/dev/test
+[root@topeet:~/chapter6/43_platform_led/app]# echo none > /sys/class/leds/work/t
+rigger
+[root@topeet:~/chapter6/43_platform_led/app]# 
+[root@topeet:~/chapter6/43_platform_led/app]# 
+[root@topeet:~/chapter6/43_platform_led/app]# ls
+app  app.c
+[root@topeet:~/chapter6/43_platform_led/app]# ./app 0
+[ 2291.219871] This is cdev_test_open
+[ 2291.220083] test_dev->kbuf[0] is 0
+[ 229[root@topeet1:~/c.hapter6/43_platform_led/app]# 220111] This is cdev_test_write
+[ 2291.220133] kbuf[0] is 0
+[ 2291.220171] This is cdev_test_release
+
+[root@topeet:~/chapter6/43_platform_led/app]# ./app 1
+[ 2303.833636] This is cdev_test_open
+[ 2303.833761] test_dev->kbuf[0] i[root@topeet:~/chapter6/43_platform_led/app]# s 1
+[ 2303.833770] This is cdev_test_write
+[ 2303.833777] kbuf[0] is 1
+[ 2303.833791] This is cdev_test_release
+
+[root@topeet:~/chapter6/43_platform_led/app]# 

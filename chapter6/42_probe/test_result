@@ -1,0 +1,30 @@
+[root@topeet:~]# cd chapter6/42_probe/
+[root@topeet:~/chapter6/42_probe]# ls
+Makefile  README  probe.c  probe.ko  test_result
+[root@topeet:~/chapter6/42_probe]# lsmod
+Module                  Size  Used by    Tainted: G  
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/chapter6/42_probe]# insmod ../40_platform_device/platform_device.
+ko 
+[ 1672.120934] Platform device registered
+[root@topeet:~/chapter6/42_probe]# 
+[root@topeet:~/chapter6/42_probe]# ls
+Makefile  README  probe.c  probe.ko  test_result
+[root@topeet:~/chapter6/42_probe]# insmod probe.ko 
+[ 1688.526464] Method 1: Memory Resource: start=0xfdd60000,end=0xfdd60004
+[ 1688.[root@topeet:~/chapter6/42_probe]# 526557] Method 1: IRQ Resource: number=4258660352
+[ 1688.526568] Method 2: Memory Resource: start=0xfdd60000,end=0xfdd60004
+[ 1688.526576] Method 2: IRQ Resource: number=101
+[ 1688.527432] Platform driver registered
+
+[root@topeet:~/chapter6/42_probe]# 
+[root@topeet:~/chapter6/42_probe]# rmmod probe.ko 
+[ 1701.092204] Platform driver unregistered
+[root@topeet:~/chapter6/42_probe]# 
+[root@topeet:~/chapter6/42_probe]# 
+[root@topeet:~/chapter6/42_probe]# rmmod platform_device.ko
+[ 1710.476110] Platform device unregistered
+[root@topeet:~/chapter6/42_probe]# 
+[root@topeet:~/chapter6/42_probe]#
