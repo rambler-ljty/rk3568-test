@@ -1,0 +1,26 @@
+/dts-v1/;
+
+/include/ "my_device_tree_core.dtsi"
+/*
+/include/ "dt-bindings/pinctrl/rockchip.h"
+
+//  RK_PB5  有具体的宏定义的值，可以include， 下面的节点信息就可以直接写具体的value 
+*/
+
+/*
+/include/ "dt-bindings/interrupt-controller/irq.h"
+
+//IRQ_TYPE_EDGE_RISING  有具体的宏定义的值，可以include 下面的节点信息就可以直接写具体的value 
+
+*/
+
+/ {
+    model = "This is my devicetree!";
+
+
+    ft5x06@38{
+        compatible = "edt,edt-f5206";
+	interrupt-parent=<&gpio0>;
+	interrupts=<RK_PB5 IRQ_TYPE_EDGE_RISING>;
+    };
+};

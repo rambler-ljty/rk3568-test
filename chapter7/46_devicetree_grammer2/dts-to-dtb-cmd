@@ -1,0 +1,1 @@
+/home/topeet/Linux/linux_sdk/kernel/scripts/dtc/dtc -I dts -O dtb -o my_device_tree.dtb my_device_tree.dts

@@ -1,0 +1,28 @@
+/dts-v1/;
+
+/ {
+    model = "This is my devicetree!";
+    #address-cells = <1>;
+    #size-cells = <1>;
+
+    node1 {
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+        gpio@22020102 {
+            reg = <0x20220102 0x40>;
+        };
+    };
+
+    node2 {
+        node1-child {
+            pinnum = <01234>;
+        };
+    };
+
+    led:gpio@22020101 {
+        compatible = "led";
+        reg = <0x20220101 0x40>;
+        status = "okay";
+    };
+};

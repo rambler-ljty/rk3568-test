@@ -1,0 +1,1 @@
+/home/topeet/Linux/linux_sdk/kernel/scripts/dtc/dtc -I dtb -O dts -o 1.dts test.dtb

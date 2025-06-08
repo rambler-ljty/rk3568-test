@@ -1,0 +1,17 @@
+###
+[root@topeet:# cd /sys/firmware/devicetree/base/topeet/
+[root@topeet:/sys/firmware/devicetree/base/topeet]# ls
+'#address-cells'  '#size-cells'   compatible   myLed   name
+[root@topeet:/sys/firmware/devicetree/base/topeet]# cd /root/54_devicetree_probe/
+[root@topeet:~/54_devicetree_probe]# insmod platform_driver.ko 
+[  370.223199] platform_driver: loading out-of-tree module taints kernel.
+[root@topeet:~/54_devicetree_probe]# [  370.225358] my_platform_probe: Probing platform device
+[  370.226338] my_platform_driver:Platform driver initialized
+
+[root@topeet:~/54_devicetree_probe]# rmmod platform_driver.ko
+[  388.179929] my_platform_remove: Removing platform device
+[  388.180282] my_platform_driver: Platform driver exited
+[root@topeet:~/54_devicetree_probe]# 
+
+
+
