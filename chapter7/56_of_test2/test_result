@@ -1,0 +1,19 @@
+###
+[root@topeet:~/55_of_test2]# insmod platform_driver.ko 
+[  712.688805] my_platform_probe: Probing platform device
+[root@topeet:~/55_of_test2]# [  712.689496] mydevice_node is myLed
+[  712.689517] my_property name is compatible
+[  712.689530] reg num is 2
+[  712.689544] value u32 is 0xFDD60000
+[  712.689554] value u64 is 0xfdd6000000000004
+[  712.689565] out_value[0] is 0xFDD60000
+[  712.689574] out_value[1] is 0x4
+[  712.689586] value_compatible value is my devicetree
+[  712.690557] my_platform_driver:Platform driver initialized
+
+[root@topeet:~/55_of_test2]# rmmod platform_driver.ko 
+[  725.476614] my_platform_remove: Removing platform device
+[  725.476942] my_platform_driver: Platform driver exited
+[root@topeet:~/55_of_test2]# 
+
+

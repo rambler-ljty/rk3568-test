@@ -1,0 +1,24 @@
+###  设备树节点实验。引用之前的platform driver代码
+
+1.设备树节点查找功能
+
+   // 通过节点名称查找
+   mydevice_node = of_find_node_by_name(NULL, "myLed");
+   
+   // 通过完整路径查找
+   mydevice_node = of_find_node_by_path("/topeet/myLed");
+   
+   // 通过兼容性字符串查找
+   mydevice_node = of_find_compatible_node(NULL, NULL, "my devicetree");
+   
+   // 通过匹配表查找
+   mydevice_node = of_find_matching_node_and_match(NULL, mynode_of_match, &mynode_math);
+
+2. 设备树节点遍历功能：
+
+   // 获取父节点
+   mydevice_node = of_get_parent(mydevice_node);
+   
+   // 获取下一个子节点
+   mydevice_node = of_get_next_child(mydevice_node, NULL);
+

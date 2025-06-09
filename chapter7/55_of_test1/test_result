@@ -1,0 +1,22 @@
+###
+[root@topeet:~/55_of_test1/module]# ls
+Makefile  platform_driver.c  platform_driver.ko
+[root@topeet:~/55_of_test1/module]# insmod  platform_driver.ko 
+[  369.525261] platform_driver: loading out-of-tree module taints kernel.
+[  369.527632] my_platform_probe: Probing platform device
+[  369.528259] mydevice_node is m[root@topeet:~/55_of_teyst1/module]# Led
+[  369.528506] mydevice_node is myLed
+[  369.528525] myled's parent node is topeet
+[  369.528538] myled's sibling node is myLed
+[  369.529209] mydevice_node is myLed
+[  369.529960] mydevice_node is myLed
+[  369.532163] my_platform_driver:Platform driver initialized
+
+[root@topeet:~/55_of_test1/module]# 
+[root@topeet:~/55_of_test1/module]# rmmod platform_driver.ko
+[  412.695161] my_platform_remove: Removing platform device
+[  412.695582] my_platform_driver: Platform driver exited
+[root@topeet:~/55_of_test1/module]# 
+[root@topeet:~/55_of_test1/module]#
+
+

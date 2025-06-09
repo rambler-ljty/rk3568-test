@@ -1,0 +1,21 @@
+###
+[root@topeet:~/55_of_test3/module]# ls
+Makefile  platform_driver.c  platform_driver.ko
+[root@topeet:~/55_of_test3/module]# insmod platform_driver.ko 
+[   93.691002] platform_driver: loading out-of-tree module taints kernel.
+[root@topeet:~/55_of_test3/module]# [   93.693166] my_platform_probe: Probing platform device
+[   93.693816] mydevice_node is myirq
+[   93.693878] irq is 110
+[   93.693893] trigger type is 0x8
+[   93.693913] irq is 110
+[   93.693933] irq is 110
+[   93.693952] irq is 110
+[   93.694976] my_platform_driver:Platform driver initialized
+
+[root@topeet:~/55_of_test3/module]# 
+[root@topeet:~/55_of_test3/module]# rmmod platform_driver.ko 
+[   99.993273] my_platform_remove: Removing platform device
+[   99.993613] my_platform_driver: Platform driver exited
+[root@topeet:~/55_of_test3/module]#
+
+
