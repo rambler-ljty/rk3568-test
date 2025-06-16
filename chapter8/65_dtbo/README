@@ -1,0 +1,58 @@
+########################
+
+
+dtbocfg.c   get from github.
+
+开源代码实现的 device-tree/overlays
+
+
+
+使用对应编译的module ko 文件 需要修改 config文件，打开overlay的配置开关 选中
+
+Device tree-->  Device tree and open firmware support --> Device tree overlays
+
+File system--> Overlay File system support   (里面的都选中)
+
+
+编译完成后 insmod dtbocfg.ko  使用其功能
+
+备注：可以参考test_result 
+
+
+#########################
+
+# 设备树覆盖配置模块
+
+## 模块概述
+该模块实现了设备树覆盖（Device Tree Overlay）的动态配置功能，通过ConfigFS文件系统提供用户空间接口，允许在运行时动态加载和管理设备树覆盖。
+
+## 主要功能
+- 创建设备树覆盖配置子系统
+- 支持动态创建和管理覆盖项
+- 提供覆盖项的启用/禁用控制
+- 支持设备树二进制数据的读写
+- 兼容不同内核版本的设备树覆盖API
+
+## 实现细节
+1. 覆盖项结构（dtbocfg_overlay_item）
+   - 包含configfs项目结构
+   - 存储覆盖项ID和数据
+   - 支持不同内核版本的节点处理
+
+2. 核心操作函数
+   - dtbocfg_overlay_item_create：创建覆盖
+   - dtbocfg_overlay_item_release：释放覆盖
+   - dtbocfg_overlay_item_status_store/show：状态控制
+   - dtbocfg_overlay_item_dtbo_read/write：数据读写
+
+3. 文件系统结构
+   - 在/sys/config/dtbocfg/下创建
+   - 支持创建overlays组
+   - 每个覆盖项包含status和dtbo属性
+
+## 特点
+- 动态覆盖管理
+- 用户空间配置接口
+- 版本兼容性支持
+- 安全的数据处理
+- 完整的错误处理 

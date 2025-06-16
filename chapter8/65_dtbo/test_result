@@ -1,0 +1,38 @@
+[root@topeet:~]# cd 65_dtbo/
+[root@topeet:~/65_dtbo]# ls
+Makefile  README  dtbocfg.c  dtbocfg.ko
+[root@topeet:~/65_dtbo]# insmod dtbocfg.ko 
+[   95.033812] dtbocfg: loading out-of-tree module taints kernel.
+[root@topeet:~/65_dtbo]# [   95.034900] dtbocfg: 0.1.0
+[   95.035019] dtbocfg: OK
+
+[root@topeet:~/65_dtbo]# 
+[root@topeet:~/65_dtbo]# 
+[root@topeet:~/65_dtbo]# 
+[root@topeet:~/65_dtbo]# cd /sys/kernel/config/
+[root@topeet:/sys/kernel/config]# ls
+device-tree  usb_gadget
+[root@topeet:/sys/kernel/config]# cd device-tree/
+[root@topeet:/sys/kernel/config/device-tree]# ls
+overlays
+[root@topeet:/sys/kernel/config/device-tree]# cd overlays/
+[root@topeet:/sys/kernel/config/device-tree/overlays]# ls
+[root@topeet:/sys/kernel/config/device-tree/overlays]# mkdir test
+[root@topeet:/sys/kernel/config/device-tree/overlays]# cd test/
+[root@topeet:/sys/kernel/config/device-tree/overlays/test]# ls
+dtbo  status
+[root@topeet:/sys/kernel/config/device-tree/overlays/test]# cat status 
+0
+[root@topeet:/sys/kernel/config/device-tree/overlays/test]# cd /
+[root@topeet:/]# rmmod dtbocfg
+rmmod: can't unload module 'dtbocfg': Resource temporarily unavailable
+[root@topeet:/]# cd -
+/sys/kernel/config/device-tree/overlays/test
+[root@topeet:/sys/kernel/config/device-tree/overlays/test]# ls
+dtbo  status
+[root@topeet:/sys/kernel/config/device-tree/overlays/test]# cd ..
+[root@topeet:/sys/kernel/config/device-tree/overlays]# rmdir test/
+[root@topeet:/sys/kernel/config/device-tree/overlays]# ls
+[root@topeet:/sys/kernel/config/device-tree/overlays]# cd 
+[root@topeet:/]# rmmod dtbocfg
+[root@topeet:/]# 
