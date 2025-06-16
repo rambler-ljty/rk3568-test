@@ -1,0 +1,30 @@
+# ConfigFS组创建模块
+
+## 模块概述
+该模块实现了ConfigFS中的组创建功能，允许在ConfigFS文件系统中动态创建子组和项目。通过提供组和项目的创建、删除以及属性操作接口，实现了灵活的文件系统结构管理。
+
+## 主要功能
+- 创建ConfigFS子系统
+- 支持动态创建子组
+- 支持动态创建和删除项目
+- 提供读写属性接口
+- 实现数据存储和读取功能
+
+## 实现细节
+1. 自定义结构体
+   - myitem：项目结构体，包含数据大小和地址
+   - mygroup：组结构体，用于创建子组
+
+2. 操作函数
+   - mygroup_make_group：创建新的子组
+   - mygroup_make_item：创建新的项目
+   - mygroup_delete_item：删除项目
+   - myread_show/mywrite_store：属性读写操作
+
+3. 文件系统结构
+   - 在/sys/config/myconfigfs/下创建
+   - 支持创建mygroup组
+   - 支持在mygroup下创建子组和项目
+   - 每个项目包含read和write属性文件
+
+

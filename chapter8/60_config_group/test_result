@@ -1,0 +1,25 @@
+[root@topeet:~]# cd /root/60_config_group/
+[root@topeet:~/60_config_group]# ls
+README  module  test_result
+[root@topeet:~/60_config_group]# cd module/
+[root@topeet:~/60_config_group/module]# ls
+Makefile  config_group.c  config_group.ko
+[root@topeet:~/60_config_group/module]# lsmod
+Module                  Size  Used by    Tainted: G  
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/60_config_group/module]# insmod config_group.ko
+[root@topeet:~/60_config_group/module]# cd /sys/kernel/config/
+[root@topeet:/sys/kernel/config]# ls
+myconfigfs  usb_gadget
+[root@topeet:/sys/kernel/config]# cd myconfigfs/
+[root@topeet:/sys/kernel/config/myconfigfs]# ls
+mygroup
+[root@topeet:/sys/kernel/config/myconfigfs]# cd mygroup/
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# ls
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# cd ../..
+[root@topeet:/sys/kernel/config]# rmmod config_group
+[root@topeet:/sys/kernel/config]# ls
+usb_gadget
+[root@topeet:/sys/kernel/config]# 

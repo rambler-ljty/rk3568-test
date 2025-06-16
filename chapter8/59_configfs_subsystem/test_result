@@ -1,0 +1,17 @@
+[root@topeet:~]# cd 59_configfs_subsystem/
+[root@topeet:~/59_configfs_subsystem]# ls
+README  module  test_result
+[root@topeet:~/59_configfs_subsystem]# lsmod
+Module                  Size  Used by    Not tainted
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/59_configfs_subsystem]# cd module/
+[root@topeet:~/59_configfs_subsystem/module]# insmod configfs_subsystem.ko
+[root@topeet:~/59_configfs_subsystem/module]# cd /sys/kernel/config/
+[root@topeet:/sys/kernel/config]# ls
+myconfigfs  usb_gadget
+[root@topeet:/sys/kernel/config]# rmmod configfs_subsystem
+[root@topeet:/sys/kernel/config]# ls
+usb_gadget
+[root@topeet:/sys/kernel/config]# 

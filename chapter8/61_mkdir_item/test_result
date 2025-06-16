@@ -1,0 +1,30 @@
+[root@topeet:~]# cd 61_mkdir_item/
+[root@topeet:~/61_mkdir_item]# ls
+README  module  test_result
+[root@topeet:~/61_mkdir_item]# cd module/
+[root@topeet:~/61_mkdir_item/module]# ls
+Makefile  mkdir_item.c  mkdir_item.ko
+[root@topeet:~/61_mkdir_item/module]# insmod mkdir_item.ko 
+[   57.318242] mkdir_item: loading out-of-tree module taints kernel.
+[root@topeet:~/61_mkdir_item/module]# cd /sys/kernel/config/
+[root@topeet:/sys/kernel/config]# [03:05:00.019] Warning: computed repaint delay is insane: -58350 msec
+ls
+myconfigfs  usb_gadget
+[root@topeet:/sys/kernel/config]# cd myconfigfs/
+[root@topeet:/sys/kernel/config/myconfigfs]# ls
+mygroup
+[root@topeet:/sys/kernel/config/myconfigfs]# cd mygroup/
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# ls
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# mkdir test
+[   85.024115] mygroup_make_item
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# ls
+test
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# cd test/
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# ls
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# cd ..
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# rmdir test/
+[  120.738419] myitem_release
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# cd /
+[root@topeet:/]# rmmod mkdir_item
+[root@topeet:/]# 
+[root@topeet:/]# 

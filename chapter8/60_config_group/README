@@ -1,0 +1,32 @@
+# ConfigFS组模块功能说明
+
+## 1. 创建ConfigFS组结构
+- 定义了一个名为`mygroup`的configfs组
+- 创建了组项目类型`mygroup_config_item_type`
+- 创建了子系统项目类型`myconfig_item_type`
+
+## 2. ConfigFS子系统设置
+- 在`/sys/config/`下创建名为`myconfigfs`的子系统
+- 通过`myconfigfs_subsystem`结构体定义子系统属性
+
+## 3. 模块初始化功能
+- 初始化configfs组
+- 注册configfs子系统
+- 初始化并注册mygroup组
+- 将mygroup组注册到子系统中
+
+## 4. 模块清理功能
+- 在模块卸载时注销configfs子系统
+
+## 5. 文件系统结构
+加载模块后，会在`/sys/config/`下创建如下结构：
+```
+/sys/config/myconfigfs/
+└── mygroup/
+```
+
+## 说明
+这个模块比之前的configfs_subsystem示例更进一步，它展示了如何：
+- 创建configfs组
+- 将组注册到子系统中
+- 构建更复杂的configfs层次结构

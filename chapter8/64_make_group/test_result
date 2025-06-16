@@ -1,0 +1,24 @@
+[root@topeet:/]# cd /root/64_make_group/module/
+[root@topeet:~/64_make_group/module]# insmod make_group.ko 
+[root@topeet:~/64_make_group/module]# cd /sys/kernel/config/
+[root@topeet:/sys/kernel/config]# ls
+myconfigfs  usb_gadget
+[root@topeet:/sys/kernel/config]# cd myconfigfs/
+[root@topeet:/sys/kernel/config/myconfigfs]# ls
+mygroup
+[root@topeet:/sys/kernel/config/myconfigfs]# cd mygroup/
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# ls
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# mkdir test
+[ 2909.924319] mygroup_make_group
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# cd test/
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# ls
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# mkdir test2
+mkdir: cannot create directory 'test2': Operation not permitted
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# 
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# cd ..
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# rmdir test
+[ 2940.676846] mygroup_delete_item
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# cd /
+[root@topeet:/]# rmmod make_group
+[root@topeet:/]# 
+[root@topeet:/]# 

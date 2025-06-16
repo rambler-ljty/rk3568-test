@@ -1,0 +1,19 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			overlay_node {
+				status = "okay";
+			};
+		};
+	};
+
+	__fixups__ {
+		rk_485_ctl = "/fragment@0:target:0";
+	};
+};

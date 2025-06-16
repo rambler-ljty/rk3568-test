@@ -1,0 +1,31 @@
+# ConfigFS动态创建项目模块功能说明
+
+## 1. 模块概述
+这个模块展示了如何在ConfigFS中动态创建项目。它实现了在`/sys/config/myconfigfs/mygroup/`目录下通过mkdir命令动态创建新项目的功能。
+
+## 2. 主要功能
+- 创建ConfigFS子系统
+- 实现动态创建项目的能力
+- 提供项目的自动清理机制
+
+## 3. 实现细节
+### 3.1 自定义项目结构
+```c
+struct myitem {
+    struct config_item item;    // 基础configfs项目结构
+};
+```
+
+### 3.2 项目操作函数
+- `myitem_release`: 项目释放函数，负责清理资源
+- `mygroup_make_item`: 创建新项目的函数，在mkdir时调用
+
+### 3.3 文件系统结构
+加载模块后，会在`/sys/config/`下创建如下结构：
+```
+/sys/config/myconfigfs/
+└── mygroup/
+    └── [动态创建的项目]
+```
+
+

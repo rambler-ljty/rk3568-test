@@ -11,3 +11,5 @@ chapter 5: 中断
 chapter 6: platform 平台总线
 
 chapter 7: 设备树
+
+chapter 8: 设备树插件

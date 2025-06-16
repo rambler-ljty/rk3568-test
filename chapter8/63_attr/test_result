@@ -1,0 +1,32 @@
+[root@topeet:/]# cd /root/63_attr/module/
+[root@topeet:~/63_attr/module]# insmod attr.ko 
+[root@topeet:~/63_attr/module]# cd /sys/kernel/config/
+[root@topeet:/sys/kernel/config]# ls
+myconfigfs  usb_gadget
+[root@topeet:/sys/kernel/config]# cd myconfigfs/
+[root@topeet:/sys/kernel/config/myconfigfs]# ls
+mygroup
+[root@topeet:/sys/kernel/config/myconfigfs]# cd mygroup/
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# ls
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# mkdir test
+[ 1867.537403] mygroup_make_item
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# ls
+test
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# cd test/
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# ls
+read  write
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# cat read 
+[ 1887.160638] myread_show
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# echo 1 > write 
+[ 1892.957992] mywrite_store
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# cat read 
+1
+[ 1906.487134] myread_show
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup/test]# cd ..
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# rmdir test/
+[ 1916.049583] mygroup_delete_item
+[ 1916.049682] myitem_release
+[root@topeet:/sys/kernel/config/myconfigfs/mygroup]# cd /
+[root@topeet:/]# rmmod attr
+[root@topeet:/]# 
+[root@topeet:/]# 
