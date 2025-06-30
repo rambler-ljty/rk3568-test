@@ -1,0 +1,13 @@
+# 69_ktype - Linux内核kobj_type示例模块
+
+## 主要功能
+
+### 1. 自定义kobj_type结构体
+- 定义自定义的kobj_type结构体
+- 设置自定义的release函数指针
+- 控制kobject的释放过程
+
+### 2. 自定义release函数
+- 实现dynamic_kobj_release函数
+- 在kobject引用计数为0时自动调用
+- 负责清理资源和释放内存

@@ -1,0 +1,24 @@
+[root@topeet:~/chapter9/70_attr]# cd module/
+[root@topeet:~/chapter9/70_attr/module]# ls
+Makefile  attr.c  attr.ko
+[root@topeet:~/chapter9/70_attr/module]# insmod attr.ko 
+[root@topeet:~/chapter9/70_attr/module]# 
+[root@topeet:~/chapter9/70_attr/module]# cd /sys/
+[root@topeet:/sys]# ls
+block  class  devices   fs      module       power  system_monitor
+bus    dev    firmware  kernel  mykobject01  rk8xx
+[root@topeet:/sys]# cd mykobject01/
+[root@topeet:/sys/mykobject01]# ls
+value1  value2
+[root@topeet:/sys/mykobject01]# cat value1 
+1
+[root@topeet:/sys/mykobject01]# cat value2
+1
+[root@topeet:/sys/mykobject01]# echo 2 > value1
+[root@topeet:/sys/mykobject01]# echo 3 > value2
+[root@topeet:/sys/mykobject01]# cat value2
+3
+[root@topeet:/sys/mykobject01]# cat value1
+2
+[root@topeet:/sys/mykobject01]# rmmod attr
+[root@topeet:/sys/mykobject01]#

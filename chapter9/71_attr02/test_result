@@ -1,0 +1,30 @@
+[root@topeet:~/chapter9]# cd 71_attr02/
+[root@topeet:~/chapter9/71_attr02]# ls
+README  module  test_result
+[root@topeet:~/chapter9/71_attr02]# cd module/
+[root@topeet:~/chapter9/71_attr02/module]# ls
+Makefile  attr.c  attr.ko
+[root@topeet:~/chapter9/71_attr02/module]# insmod attr.ko 
+[root@topeet:~/chapter9/71_attr02/module]# cd /sys
+[root@topeet:/sys]# ls
+block  class  devices   fs      module       power  system_monitor
+bus    dev    firmware  kernel  mykobject01  rk8xx
+[root@topeet:/sys]# cd mykobject01/
+[root@topeet:/sys/mykobject01]# ls
+value1  value2
+[root@topeet:/sys/mykobject01]# cat value1 
+show_myvalue1
+[root@topeet:/sys/mykobject01]# cat value2
+show_myvalue2
+[root@topeet:/sys/mykobject01]# 
+[root@topeet:/sys/mykobject01]# echo 2 > value1
+[  575.663347] kobject:(00000000b9dd41fe):dynamic_kobj_release
+[  7[root@topeet:/sys/mykobject01]# 29.594227] buf is 2
+[  729.594227] 
+
+[root@topeet:/sys/mykobject01]# echo 3 > value2
+[  740.766300] buf is 3
+[  740.766300] 
+[root@topeet:/sys/mykobject01]# 
+[root@topeet:/sys/mykobject01]# rmmod attr
+[root@topeet:/sys/mykobject01]# 

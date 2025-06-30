@@ -1,0 +1,30 @@
+[root@topeet:/]# cd /root/chapter9/68_kref/
+[root@topeet:~/chapter9/68_kref]# ls
+README  module  test_result
+[root@topeet:~/chapter9/68_kref]# cd module/
+[root@topeet:~/chapter9/68_kref/module]# ls
+Makefile  kref.c  kref.ko
+[root@topeet:~/chapter9/68_kref/module]# insmod kref.ko 
+[  192.819911] kref: loading out-of-tree module taints kernel.
+[root@topeet:~/chapter9/68_kref/module]# [  192.820891] mykobject01 kref is 1
+[  192.820922] mykobject01 kref is 2
+[  192.820935] mykobject02 kref is 1
+[  192.820953] mykobject03 kref is 1
+
+[root@topeet:~/chapter9/68_kref/module]# 
+[root@topeet:~/chapter9/68_kref/module]# 
+[root@topeet:~/chapter9/68_kref/module]# rmmod kref.ko
+[  243.430876] mykobject01 kref is 2
+[  243.430950] mykobject02 kref is 1
+[  243.430961] mykobject03 kref is 1
+[  243.430970] mykobject01 kref is 1
+[  243.430978] mykobject02 kref is 1
+[  243.430985] mykobject03 kref is 1
+[  243.431029] mykobject01 kref is 0
+[ [root@topeet:~/chapter9/68_kref/module]#  243.431038] mykobject02 kref is 0
+[  243.431044] mykobject03 kref is 1
+[  243.431057] mykobject01 kref is 0
+[  243.431069] mykobject02 kref is 0
+[  243.431085] mykobject03 kref is 0
+
+[root@topeet:~/chapter9/68_kref/module]#

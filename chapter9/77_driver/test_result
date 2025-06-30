@@ -1,0 +1,35 @@
+[root@topeet:~/chapter9/77_driver]# ls
+README  bus.ko  device.ko  module  test_result
+[root@topeet:~/chapter9/77_driver]# insmod bus.ko 
+[  124.210797] bus: loading out-of-tree module taints kernel.
+[root@topeet:~/chapter9/77_driver]# insmod  device.ko 
+[root@topeet:~/chapter9/77_driver]# cd module/
+[root@topeet:~/chapter9/77_driver/module]# insmod driver.ko 
+[  137.019748] Driver 'mydevice' needs updating - please use bus_type methods
+[  137.020041] This [root@itopeet:~/chapter9/77_drivers/module]#  mydriver_probe
+
+[root@topeet:~/chapter9/77_driver/module]# cd /sys/devices/
+[root@topeet:/sys/devices]# ls
+armv8_pmuv3  iio_sysfs_trigger  platform  system      uprobe
+breakpoint   mydevice           software  tracepoint  virtual
+[root@topeet:/sys/devices]# cd /sys/bus/mybus/
+[root@topeet:/sys/bus/mybus]# ls
+devices  drivers  drivers_autoprobe  drivers_probe  uevent  value
+[root@topeet:/sys/bus/mybus]# cd drivers/
+[root@topeet:/sys/bus/mybus/drivers]# ls
+mydevice
+[root@topeet:/sys/bus/mybus/drivers]# cd mydevice/
+[root@topeet:/sys/bus/mybus/drivers/mydevice]# ls
+bind  mydevice  uevent  unbind
+[root@topeet:/sys/bus/mybus/drivers/mydevice]# cd ../../devices/
+[root@topeet:/sys/bus/mybus/devices]# ls
+mydevice
+[root@topeet:/sys/bus/mybus/devices]# 
+[root@topeet:/sys/bus/mybus/devices]# 
+[root@topeet:/sys/bus/mybus/devices]# cd /root
+[root@topeet:~]# rmmod device
+[  225.941568] This is mydriver_remove
+[  225.941798] This is myrelease
+[root@topeet:~]# rmmod driver
+[root@topeet:~]# rmmod bus
+[root@topeet:~]#

@@ -1,0 +1,19 @@
+# 71_attr02 - Linux内核kobj_attribute示例模块
+
+## 主要功能
+
+### 1. kobj_attribute结构体使用
+- 使用kobj_attribute替代struct attribute
+- 通过__ATTR宏简化属性定义
+- 自动绑定show和store函数
+
+### 2. __ATTR宏的应用
+- 使用__ATTR宏定义kobj_attribute
+- 自动填充结构体成员
+- 设置文件权限和操作函数
+
+### 3. 通用操作函数
+- 实现通用的myshow和mystore函数
+- 通过container_of宏进行类型转换
+- 调用kobj_attribute中的具体操作函数
+

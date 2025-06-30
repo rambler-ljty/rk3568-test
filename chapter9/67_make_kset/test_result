@@ -1,0 +1,17 @@
+[root@topeet:/sys]# cd /root
+[root@topeet:~]# ls
+bak  chapter9  read-bak  tmp  wifi_link  work
+[root@topeet:~]# cd chapter9/67_make_kset/module/
+[root@topeet:~/chapter9/67_make_kset/module]# ls
+Makefile  make_kset.c  make_kset.ko
+[root@topeet:~/chapter9/67_make_kset/module]# insmod make_kset.ko 
+[root@topeet:~/chapter9/67_make_kset/module]# 
+[root@topeet:~/chapter9/67_make_kset/module]# cd /sys
+[root@topeet:/sys]# ls
+block  bus  class  dev  devices  firmware  fs  kernel  module  mykset  power  rk8xx  system_monitor
+[root@topeet:/sys]# cd mykset/
+[root@topeet:/sys/mykset]# ls
+mykobject01  mykobject02
+[root@topeet:/sys/mykset]# rmmod make_kset
+[root@topeet:/sys/mykset]# 
+[root@topeet:/sys/mykset]# 

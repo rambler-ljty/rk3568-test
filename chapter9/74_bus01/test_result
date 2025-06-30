@@ -1,0 +1,18 @@
+[root@topeet:~/chapter9/74_bus01]# ls
+README  module  test_result
+[root@topeet:~/chapter9/74_bus01]# 
+[root@topeet:~/chapter9/74_bus01]# 
+[root@topeet:~/chapter9/74_bus01]# cd module/
+[root@topeet:~/chapter9/74_bus01/module]# insmod bus.ko 
+[root@topeet:~/chapter9/74_bus01/module]# cd /sys/bus
+[root@topeet:/sys/bus]# ls
+amba         container     gpio  mdio_bus  mmc_rpmb  pci_express    sdio     usb
+cec          cpu           hid   media     mybus     platform       snd_seq  usb-serial
+clockevents  event_source  i2c   mipi-dsi  nvmem     scmi_protocol  spi      workqueue
+clocksource  genpd         iio   mmc       pci       scsi           ulpi
+[root@topeet:/sys/bus]# cd mybus/
+[root@topeet:/sys/bus/mybus]# ls
+devices  drivers  drivers_autoprobe  drivers_probe  uevent
+[root@topeet:/sys/bus/mybus]# 
+[root@topeet:/sys/bus/mybus]# rmmod bus
+[root@topeet:/sys/bus/mybus]#

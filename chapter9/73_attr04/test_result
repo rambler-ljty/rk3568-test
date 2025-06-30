@@ -1,0 +1,12 @@
+[root@topeet:/sys/mykobject01]# cd /root/chapter9/73_attr04/module/
+[root@topeet:~/chapter9/73_attr04/module]# ls
+Makefile  attr.c  attr.ko
+[root@topeet:~/chapter9/73_attr04/module]# insmod attr.ko 
+[root@topeet:~/chapter9/73_attr04/module]# cd /sys/mykobject01/
+[root@topeet:/sys/mykobject01]# ls
+myattr
+[root@topeet:/sys/mykobject01]# cd myattr/
+[root@topeet:/sys/mykobject01/myattr]# ls
+value1  value2
+[root@topeet:/sys/mykobject01/myattr]# rmmod attr
+[root@topeet:/sys/mykobject01/myattr]#

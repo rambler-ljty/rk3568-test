@@ -1,0 +1,10 @@
+[root@topeet:~/chapter9/75_bus02/module]# ls
+Makefile  bus.c  bus.ko
+[root@topeet:~/chapter9/75_bus02/module]# insmod bus.ko 
+[root@topeet:~/chapter9/75_bus02/module]# cd /sys/bus/mybus/
+[root@topeet:/sys/bus/mybus]# ls
+devices  drivers  drivers_autoprobe  drivers_probe  uevent  value
+[root@topeet:/sys/bus/mybus]# cat value 
+mybus_show
+[root@topeet:/sys/bus/mybus]# rmmod bus
+[root@topeet:/sys/bus/mybus]#

@@ -1,0 +1,31 @@
+[root@topeet:~/chapter9/72_attr03/module]# ls
+Makefile  attr.c  attr.ko
+[root@topeet:~/chapter9/72_attr03/module]# insmod attr.ko 
+[   73.968951] attr: loading out-of-tree module taints kernel.
+[root@topeet:~/chapter9/72_attr03/module]# 
+[root@topeet:~/chapter9/72_attr03/module]# cd /sys
+[root@topeet:/sys]# ls
+block  bus  class  dev  devices  firmware  fs  kernel  module  mykobject01  power  rk8xx  system_monitor
+[root@topeet:/sys]# cd mykobject01/
+[root@topeet:/sys/mykobject01]# ls
+value1  value2
+[root@topeet:/sys/mykobject01]# cat value1 
+show_myvalue1
+[   88.601310] This is kobj_attr_show
+[root@topeet:/sys/mykobject01]# cat value2
+show_myvalue2
+[   93.771893] This is kobj_attr_show
+[root@topeet:/sys/mykobject01]# 
+[root@topeet:/sys/mykobject01]# echo 1 > value1
+[  108.071254] This is kobj_attr_store
+[  108.071365] buf is 1
+[  [root@topee1t:/sys/mykobject01]# 08.071365] 
+
+[root@topeet:/sys/mykobject01]# echo 1 > value2 
+[  123.683258] This is kobj_attr_store
+[  123.683378] buf is 1
+[  [root@topeet:/sys/mykobject01]# 123.683378] 
+
+[root@topeet:/sys/mykobject01]# rmmod  attr
+[root@topeet:/sys/mykobject01]# 
+[root@topeet:/sys/mykobject01]# 

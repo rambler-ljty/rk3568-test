@@ -1,0 +1,19 @@
+# 70_attr - Linux内核sysfs属性示例模块
+
+## 主要功能
+
+### 1. 自定义kobject结构体
+- 创建包含自定义数据的kobject结构体
+- 使用内嵌kobject的方式扩展功能
+- 通过container_of宏实现类型转换
+
+### 2. sysfs属性创建
+- 定义struct attribute结构体
+- 设置属性名称和文件权限
+- 创建属性数组并注册到kobj_type
+
+### 3. 用户空间接口
+- 实现show函数处理读取操作
+- 实现store函数处理写入操作
+- 通过sysfs_ops结构体注册操作函数
+

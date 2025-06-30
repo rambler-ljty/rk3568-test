@@ -1,0 +1,9 @@
+[root@topeet:~/chapter9/69_ktype]# cd module/
+[root@topeet:~/chapter9/69_ktype/module]# insmod 
+Makefile  ktype.c   ktype.ko
+[root@topeet:~/chapter9/69_ktype/module]# insmod ktype.ko 
+[root@topeet:~/chapter9/69_ktype/module]# 
+[root@topeet:~/chapter9/69_ktype/module]# rmmod ktype.ko
+[  396.764565] kobject:(0000000085532e94):dynamic_kobj_release
+[root@topeet:~/chapter9/69_ktype/module]# 
+[root@topeet:~/chapter9/69_ktype/module]#

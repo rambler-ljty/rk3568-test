@@ -1,0 +1,14 @@
+# 73_attr04 - Linux内核attribute_group示例模块
+
+## 主要功能
+
+### 1. attribute_group的使用
+- 使用attribute_group结构体组织多个属性
+- 通过sysfs_create_group一次性创建属性组
+- 在sysfs中创建层次化的目录结构
+
+### 2. 属性组管理
+- 将相关属性组织成一个组
+- 统一的属性创建和删除
+- 更好的sysfs目录结构
+

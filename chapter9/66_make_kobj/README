@@ -1,0 +1,7 @@
+## 主要功能
+
+### 1. kobject创建方式演示
+- **方式一**：使用`kobject_create_and_add()`直接创建并添加到sysfs根目录
+- **方式二**：创建具有父子关系的kobject，形成层次结构
+- **方式三**：使用`kzalloc()`分配内存后手动初始化kobject
+

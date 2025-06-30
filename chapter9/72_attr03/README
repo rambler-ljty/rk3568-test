@@ -1,0 +1,21 @@
+## 修改kernel 添加log  p738
+
+# 72_attr03 - Linux内核sysfs_create_file示例模块
+
+## 主要功能
+
+### 1. sysfs_create_file的使用
+- 使用sysfs_create_file函数手动创建属性文件
+- 动态添加属性到已存在的kobject
+- 不依赖kobj_type的default_attrs机制
+
+### 2. 简化的kobject创建
+- 使用kobject_create_and_add创建标准kobject
+- 不需要自定义kobj_type结构体
+- 不需要实现自定义的sysfs_ops
+
+### 3. 动态属性管理
+- 在运行时动态添加属性文件
+- 支持灵活的属性创建时机
+- 自动清理机制
+

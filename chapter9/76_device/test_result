@@ -1,0 +1,19 @@
+[root@topeet:/sys/devices]# cd /root/chapter9/76_device/module/
+[root@topeet:~/chapter9/76_device/module]# insmod device.ko 
+[root@topeet:~/chapter9/76_device/module]# cd /sys/devices/
+[root@topeet:/sys/devices]# ls
+armv8_pmuv3  iio_sysfs_trigger  platform  system      uprobe
+breakpoint   mydevice           software  tracepoint  virtual
+[root@topeet:/sys/devices]# cd mydevice/
+[root@topeet:/sys/devices/mydevice]# cd /sys/bus/mybus/
+[root@topeet:/sys/bus/mybus]# ls
+devices  drivers  drivers_autoprobe  drivers_probe  uevent  value
+[root@topeet:/sys/bus/mybus]# cd devices/
+[root@topeet:/sys/bus/mybus/devices]# ls
+mydevice
+[root@topeet:/sys/bus/mybus/devices]# cd mydevice/
+[root@topeet:/sys/devices/mydevice]# ls
+dev  power  subsystem  uevent
+[root@topeet:/sys/devices/mydevice]# rmmod device
+[  693.555840] This is myrelease
+[root@topeet:/sys/devices/mydevice]# rmmod bus

@@ -1,0 +1,19 @@
+[root@topeet:~/chapter9]# cd 66_make_kobj/module/
+[root@topeet:~/chapter9/66_make_kobj/module]# ls
+Makefile  make_kobj.c  make_kobj.ko
+[root@topeet:~/chapter9/66_make_kobj/module]# insmod make_kobj.ko 
+[  449.076572] make_kobj: loading out-of-tree module taints kernel.
+[root@topeet:~/chapter9/66_make_kobj/module]# 
+[root@topeet:~/chapter9/66_make_kobj/module]# cd /sys
+[root@topeet:/sys]# ls
+block  class  devices   fs      module       mykobject03  rk8xx
+bus    dev    firmware  kernel  mykobject01  power        system_monitor
+[root@topeet:/sys]# cd mykobject01/
+[root@topeet:/sys/mykobject01]# ls
+mykobject02
+[root@topeet:/sys/mykobject01]# cd /sys
+[root@topeet:/sys]# rmmod make_kobj
+[root@topeet:/sys]# ls
+block  bus  class  dev  devices  firmware  fs  kernel  module  power  rk8xx  system_monitor
+[root@topeet:/sys]# 
+[root@topeet:/sys]
