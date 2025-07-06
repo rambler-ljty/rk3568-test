@@ -1,0 +1,1 @@
+该模块演示了如何在 Linux 内核模块中创建 kset 和 kobject，并通过 uevent 机制向用户空间发送事件通知

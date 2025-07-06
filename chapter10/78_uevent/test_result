@@ -1,0 +1,22 @@
+[root@topeet:~/chapter10/78_uevent]# cd module/
+[root@topeet:~/chapter10/78_uevent/module]# ls
+Makefile  uevent.c  uevent.ko
+[root@topeet:~/chapter10/78_uevent/module]# udevadm monitor &
+[root@topeet:~/chapter10/78_uevent/module]# monitor will print the received events for:
+UDEV - the event which udev sends out after rule processing
+KERNEL - the kernel uevent
+
+
+[root@topeet:~/chapter10/78_uevent/module]# 
+[root@topeet:~/chapter10/78_uevent/module]# insmod uevent.ko 
+[  235.226269] uevent: loading out-of-tree module taints kernel.
+KERNEL[235.070557] change   /mykset/mykobject01 (mykset)
+KERNEL[235.074613] add      /module/uevent (module)
+UDEV  [235.079170] change   /mykset/mykobject01 (mykset)
+[root@topeet:~/chapter10/78_uevent/module]# UDEV  [235.084135] add      /module/uevent (module)
+
+[root@topeet:~/chapter10/78_uevent/module]# rmmod uevent
+KERNEL[248.752253] remove   /module/uevent (module)
+UDEV  [248.755463] remove   /module/uevent (module)
+[root@topeet:~/chapter10/78_uevent/module]# 
+[root@topeet:~/chapter10/78_uevent/module]# 

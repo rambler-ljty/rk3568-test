@@ -1,0 +1,19 @@
+[root@topeet:~]# udevadm monitor &
+[root@topeet:~]# monitor will print the received events for:
+UDEV - the event which udev sends out after rule processing
+KERNEL - the kernel uevent
+
+
+[root@topeet:~]#
+[root@topeet:~]# insmod uevent_ops.ko 
+KERNEL[508.593769] add      /mykset/mykobject02 (my_kset)
+KERNEL[508.593960] add      /module/uevent_ops (module)
+UDEV  [508.598485] add      /mykset/mykobject02 (my_kset)
+[root@topeet:~]# UDEV  [508.603558] add      /module/uevent_ops (module)
+
+[root@topeet:~]# rmmod  uevent_ops
+KERNEL[516.114079] remove   /mykset/mykobject02 (my_kset)
+KERNEL[516.114767] remove   /module/uevent_ops (module)
+UDEV  [516.118791] remove   /mykset/mykobject02 (my_kset)
+UDEV  [516.123837] remove   /module/uevent_ops (module)
+[root@topeet:~]#  

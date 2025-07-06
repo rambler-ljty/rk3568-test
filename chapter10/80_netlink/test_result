@@ -1,0 +1,43 @@
+[root@topeet:~/chapter10/80_netlink]# ls
+netlink  netlink.c
+[root@topeet:~/chapter10/80_netlink]# ./netlink &
+[root@topeet:~/chapter10/80_netlink]# 
+[root@topeet:~/chapter10/80_netlink]# 
+[root@topeet:~/chapter10/80_netlink]# insmod  /root/uevent_ops.ko 
+[  253.465488] uevent_ops: loading out-of-tree module taints kernel.
+add@/mykset/mykobject02
+ACTION=add
+[root@topeet:~/chapter10/80_netlink]# DEVPATH=/mykset/mykobject02
+SUBSYSTEM=my_kset
+MYDEVICE=TOPEET
+SEQNUM=2912
+
+add@/module/uevent_ops
+ACTION=add
+DEVPATH=/module/uevent_ops
+SUBSYSTEM=module
+SEQNUM=2913
+
+
+[root@topeet:~/chapter10/80_netlink]# 
+[root@topeet:~/chapter10/80_netlink]# lsmod
+Module                  Size  Used by    Tainted: G  
+uevent_ops             16384  0 
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/chapter10/80_netlink]# rmmod uevent_ops.ko
+remove@/mykset/mykobject02
+ACTION=remove
+DEVPATH=/mykset/mykobject02
+SUBSYSTEM=my_kset
+MYDEVICE=TOPEET
+SEQNUM=2914
+
+remove@/module/uevent_ops
+ACTION=remove
+DEVPATH=/module/uevent_ops
+SUBSYSTEM=module
+SEQNUM=2915
+
+[root@topeet:~/chapter10/80_netlink]# 
