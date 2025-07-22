@@ -1,0 +1,43 @@
+# gpioctrl.c 功能说明
+
+本文件实现了对Linux系统中GPIO接口的基本控制功能，主要包括：
+
+1. GPIO导出（export）
+   - 通过向/sys/class/gpio/export写入GPIO编号，使该GPIO可被用户空间访问。
+
+2. GPIO取消导出（unexport）
+   - 通过向/sys/class/gpio/unexport写入GPIO编号，释放该GPIO资源。
+
+3. GPIO控制（ctrl）
+   - 控制GPIO的属性，如方向（direction）和边缘触发（edge）。
+   - 通过向对应的/sys/class/gpio/gpioX/目录下的文件写入相应的值实现控制。
+
+4. GPIO中断处理（interrupt）
+   - 使用poll监听GPIO值变化，实现中断响应。
+
+5. GPIO读取（read_value）
+   - 读取GPIO的电平值，判断高低电平。
+
+6. 主程序（main）
+   - 根据传入的GPIO编号，完成GPIO的导出、方向设置为输入、边缘触发设置、处理中断，最后取消导出操作。
+
+## 使用方法
+
+编译后执行程序，传入一个参数：
+
+```
+./gpioctrl <GPIO编号>
+```
+
+例如：
+
+```
+./gpioctrl 17
+```
+
+表示将GPIO17导出，设置为输入模式，设置边缘触发，监听中断事件。
+
+## 注意事项
+
+- 需要有相应的权限操作/sys/class/gpio目录。
+- 程序执行完毕后会取消导出GPIO，释放资源。

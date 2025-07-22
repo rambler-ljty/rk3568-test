@@ -1,0 +1,27 @@
+[root@topeet:/]# cd /sys/class/gpio/
+[root@topeet:/sys/class/gpio]# ls
+export  gpio114  gpiochip0  gpiochip128  gpiochip32  gpiochip511  gpiochip64  gpiochip96  unexport
+[root@topeet:/sys/class/gpio]# echo 15 > export
+[root@topeet:/sys/class/gpio]# ls
+export  gpio114  gpio15  gpiochip0  gpiochip128  gpiochip32  gpiochip511  gpiochip64  gpiochip96  unexport
+[root@topeet:/sys/class/gpio]# cd gpio15/
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# 
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# ls
+active_low  device  direction  edge  power  subsystem  uevent  value
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# cat direction 
+in
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# echo out > direction 
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# cat direction 
+out
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# cat active_low 
+0
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# cat value 
+0
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# echo 1 >value 
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# echo 0 >value 
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# 
+[root@topeet:/sys/devices/platform/fdd60000.gpio/gpiochip0/gpio/gpio15]# cd /root/chapter12/82_gpioctrl01
+[root@topeet:~/chapter12/82_gpioctrl01]# chmod 777 gpioctrl
+[root@topeet:~/chapter12/82_gpioctrl01]# ./gpioctrl 15 1
+[root@topeet:~/chapter12/82_gpioctrl01]# ./gpioctrl 15 0
+[root@topeet:~/chapter12/82_gpioctrl01]# 

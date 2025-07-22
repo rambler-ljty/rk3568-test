@@ -1,0 +1,23 @@
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# 
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# cat /sys/kernel/debug/pinctrl/pinctrl-rockchip-pinctrl/pinmux-pins 
+| grep 32
+pin 32 (gpio1-0): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 132 (gpio4-4): fe010000.ethernet (GPIO UNCLAIMED) function gmac1 group gmac1m1-tx-bus2
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# 
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# 
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# insmod gpio_api.ko
+[   91.700749] gpio_api: loading out-of-tree module taints kernel.
+[   91.703071] This is my_platform_probe
+[   91.705217] my_platf[root@topeet:~/chaptero12/89_gpioctrl08/02_mordule]# m_driver:Platform driver initialized
+
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# 
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# cat /sys/kernel/debug/pinctrl/pinctrl-rockchip-pinctrl/pinmux-pins 
+| grep 32
+pin 32 (gpio1-0): gpio1_a0 (GPIO UNCLAIMED) function mygpio group my-gpio-ctrl
+pin 132 (gpio4-4): fe010000.ethernet (GPIO UNCLAIMED) function gmac1 group gmac1m1-tx-bus2
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# 
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# 
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# rmmod gpio_api.ko
+[  120.245144] my_platform_remove: Removing platform device
+[  120.245457] my_platform_driver: Platform driver exited
+[root@topeet:~/chapter12/89_gpioctrl08/02_module]# 

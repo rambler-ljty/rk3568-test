@@ -1,0 +1,10 @@
+[root@topeet:~/chapter12/83_gpioctrl02]# ./gpioctrl 42
+gpio_path:  /sys/class/gpio/gpio42
+file_path:  /sys/class/gpio/gpio42/value
+The value is low
+The value is 0
+[root@topeet:~/chapter12/83_gpioctrl02]# ./gpioctrl 42
+gpio_path:  /sys/class/gpio/gpio42
+file_path:  /sys/class/gpio/gpio42/value
+The value is high
+The value is 1

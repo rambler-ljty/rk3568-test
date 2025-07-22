@@ -1,0 +1,34 @@
+[root@topeet:~/chapter12/90_gpioctrl09/02_module]# cat /sys/kernel/debug/pinctrl/pinctrl-rockchip-pinctrl/pinmux-pins 
+| grep 32
+pin 32 (gpio1-0): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 132 (gpio4-4): fe010000.ethernet (GPIO UNCLAIMED) function gmac1 group gmac1m1-tx-bus2
+[root@topeet:~/chapter12/90_gpioctrl09/02_module]# 
+[root@topeet:~/chapter12/90_gpioctrl09/02_module]# 
+[root@topeet:~/chapter12/90_gpioctrl09/02_module]# insmod gpio_api.ko 
+[  117.556270] gpio_api: loading out-of-tree module taints kernel.
+[root@topeet:~/chapter12/90_gpioctrl09/02_module]# [  117.558639] This is my_platform_probe
+[  117.560024] my_platform_driver:Platform driver initialized
+
+[root@topeet:~/chapter12/90_gpioctrl09/02_module]# cd /sys/devices/platform/gpio1_a0/
+[root@topeet:/sys/devices/platform/gpio1_a0]# ls
+driver  driver_override  modalias  of_node  power  selectmux  subsystem  uevent
+[root@topeet:/sys/devices/platform/gpio1_a0]# cat selectmux 
+cat: selectmux: Permission denied
+[root@topeet:/sys/devices/platform/gpio1_a0]# echo 1 > selectmux 
+[root@topeet:/sys/devices/platform/gpio1_a0]# 
+[root@topeet:/sys/devices/platform/gpio1_a0]# cat /sys/kernel/debug/pinctrl/pinctrl-rockchip-pinctrl/pinmux-pins | gre
+p 32
+pin 32 (gpio1-0): gpio1_a0 (GPIO UNCLAIMED) function mygpio_func1 group my-gpio-ctrl
+pin 132 (gpio4-4): fe010000.ethernet (GPIO UNCLAIMED) function gmac1 group gmac1m1-tx-bus2
+[root@topeet:/sys/devices/platform/gpio1_a0]# 
+[root@topeet:/sys/devices/platform/gpio1_a0]# echo 0 > selectmux 
+[root@topeet:/sys/devices/platform/gpio1_a0]# 
+[root@topeet:/sys/devices/platform/gpio1_a0]# cat /sys/kernel/debug/pinctrl/pinctrl-rockchip-pinctrl/pinmux-pins | gre
+p 32
+pin 32 (gpio1-0): gpio1_a0 (GPIO UNCLAIMED) function mygpio_func2 group i2c3_sda
+pin 132 (gpio4-4): fe010000.ethernet (GPIO UNCLAIMED) function gmac1 group gmac1m1-tx-bus2
+[root@topeet:/sys/devices/platform/gpio1_a0]# 
+[root@topeet:/sys/devices/platform/gpio1_a0]# rmmod gpio_api.ko
+[  246.425711] my_platform_remove: Removing platform device
+[  246.426035] my_platform_driver: Platform driver exited
+[root@topeet:/sys/devices/platform/gpio1_a0]# 

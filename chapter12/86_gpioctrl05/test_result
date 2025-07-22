@@ -1,0 +1,11 @@
+[root@topeet:~]# insmod gpio_api.ko 
+[   82.337562] gpio_api: loading out-of-tree module taints kernel.
+[   82.339999] This is my_platform_probe
+[   82.340105] num is 3[root@topeet:~]# 2
+[   82.340143] num is 32
+[   82.341237] my_platform_driver: Platform driver initialized
+
+[root@topeet:~]# rmmod  gpio_api.ko 
+[   96.886591] my_platform_remove: Removing platform device
+[   96.886972] my_platform_driver: Platform driver exited
+[root@topeet:~]# 

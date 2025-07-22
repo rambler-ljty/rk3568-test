@@ -1,0 +1,26 @@
+[root@topeet:/]# io -r -4 0xfdd60008
+fdd60008:  00004044
+[root@topeet:/]# 
+[root@topeet:/]# 
+[root@topeet:/]# io -r -4 0xfdd60000
+fdd60000:  00004040
+[root@topeet:/]# io -w -4 0xFDD60008 0X8000c044
+[root@topeet:/]# 
+[root@topeet:/]# io -r -4 0xfdd60000
+fdd60000:  00004040
+[root@topeet:/]# io -r -4 0xfdd60008
+fdd60008:  0000c044
+[root@topeet:/]# 
+[root@topeet:/]# io -w -4  0xfdd60000 0x8000C044
+[root@topeet:/]# 
+[root@topeet:/]# io -w -4  0xfdd60000 0x80004044
+[root@topeet:/]# 
+[root@topeet:/]# 
+[root@topeet:/]# pwd
+/
+[root@topeet:/]# cd /root/chapter12/85_gpioctrl04/
+[root@topeet:~/chapter12/85_gpioctrl04]# ls
+gpioctrl  gpioctrl.c
+[root@topeet:~/chapter12/85_gpioctrl04]# ./gpioctrl 15    (led 闪烁亮灭)
+
+[root@topeet:~/chapter12/85_gpioctrl04]#

@@ -1,0 +1,3 @@
+[root@topeet:~/chapter12/84_gpioctrl03]# ./gpioctrl 42&
+[root@topeet:~/chapter12/84_gpioctrl03]# value is 1
+
