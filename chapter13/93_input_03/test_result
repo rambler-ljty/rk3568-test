@@ -1,0 +1,14 @@
+[root@topeet:~/chapter13]# cd 93_input_03/
+[root@topeet:~/chapter13/93_input_03]# ls
+app  app.c
+[root@topeet:~/chapter13/93_input_03]# chmod +x app
+[root@topeet:~/chapter13/93_input_03]# ./app
+value is 0
+value is 1
+value is 0
+value is 1
+value is 0
+value is 1
+value is 0
+value is 1
+value is 0

@@ -19,3 +19,5 @@ chapter 9: 设备模型
 chapter 10: 热插拔
 
 chapter 12: gpio子系统
+
+chapter 13: 输入子系统

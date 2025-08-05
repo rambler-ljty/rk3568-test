@@ -1,0 +1,74 @@
+##
+
+[root@topeet:~/chapter13/91_myinput_dev]# ls
+Makefile  README  myinput_dev.c  myinput_dev.ko  test_result
+[root@topeet:~/chapter13/91_myinput_dev]# ls /dev/input
+by-path  event0  event1  event2  event3
+[root@topeet:~/chapter13/91_myinput_dev]# 
+[root@topeet:~/chapter13/91_myinput_dev]# insmod myinput_dev.ko 
+[  202.611542] myinput_dev: loading out-of-tree module taints kernel.
+[root@topeet:~/chapter13/91_myinput_dev]# [  202.612978] input: myinput_dev as /devices/virtual/input/input5
+[15:16:35.391] event4  - myinput_dev: is tagged by udev as: Keyboard
+[15:16:35.392] event4  - myinput_dev: device is a keyboard
+[15:16:35.398] libinput: configuring device "myinput_dev".
+[15:16:35.402] associating input device event4 with output LVDS-1 (none by udev)
+
+[root@topeet:~/chapter13/91_myinput_dev]# 
+[root@topeet:~/chapter13/91_myinput_dev]# ls /dev/input
+by-path  event0  event1  event2  event3  event4
+[root@topeet:~/chapter13/91_myinput_dev]# 
+[root@topeet:~/chapter13/91_myinput_dev]# cat /proc/bus/input/devices 
+I: Bus=0019 Vendor=524b Product=0006 Version=0100
+N: Name="fdd70030.pwm"
+P: Phys=gpio-keys/remotectl
+S: Sysfs=/devices/platform/fdd70030.pwm/input/input0
+U: Uniq=
+H: Handlers=kbd event0 cpufreq dmcfreq 
+B: PROP=0
+B: EV=3
+B: KEY=40008800 c168000000000 10000ffc
+
+I: Bus=0019 Vendor=0000 Product=0000 Version=0000
+N: Name="rk805 pwrkey"
+P: Phys=rk805_pwrkey/input0
+S: Sysfs=/devices/platform/fdd40000.i2c/i2c-0/0-0020/rk805-pwrkey/input/input1
+U: Uniq=
+H: Handlers=kbd event1 cpufreq dmcfreq 
+B: PROP=0
+B: EV=3
+B: KEY=10000000000000 0
+
+I: Bus=0019 Vendor=0001 Product=0001 Version=0100
+N: Name="adc-keys"
+P: Phys=adc-keys/input0
+S: Sysfs=/devices/platform/adc-keys/input/input3
+U: Uniq=
+H: Handlers=kbd event2 cpufreq dmcfreq 
+B: PROP=0
+B: EV=3
+B: KEY=40000800 c000000000000 0
+
+I: Bus=0000 Vendor=0000 Product=0000 Version=0000
+N: Name="rockchip,rk809-codec Headphones"
+P: Phys=ALSA
+S: Sysfs=/devices/platform/rk809-sound/sound/card0/input4
+U: Uniq=
+H: Handlers=event3 
+B: PROP=0
+B: EV=21
+B: SW=4
+
+I: Bus=0000 Vendor=0000 Product=0000 Version=0000
+N: Name="myinput_dev"
+P: Phys=
+S: Sysfs=/devices/virtual/input/input5
+U: Uniq=
+H: Handlers=kbd event4 cpufreq dmcfreq 
+B: PROP=0
+B: EV=3
+B: KEY=4
+
+[root@topeet:~/chapter13/91_myinput_dev]# 
+[root@topeet:~/chapter13/91_myinput_dev]# rmmod myinput_dev
+[15:18:43.609] event4  - myinput_dev: device removed
+
