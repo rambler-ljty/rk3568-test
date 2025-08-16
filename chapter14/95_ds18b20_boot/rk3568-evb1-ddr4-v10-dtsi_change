@@ -1,0 +1,23 @@
+--- a/rockchip/rk3568-evb1-ddr4-v10.dtsi
++++ b/rockchip/rk3568-evb1-ddr4-v10.dtsi
+@@ -102,7 +102,12 @@
++       ds18b20_gpio:gpio0_b0{
++               compatible="ds18b20";
++               ds18b20-gpios=<&gpio0 RK_PB0 GPIO_ACTIVE_HIGH>;
++               pinctrl-names="default";
++               pinctrl-0=<&ds18b20_gpio_ctrl>;
++       };
+        
+ 
+ };
+@@ -483,6 +488,13 @@
+                        rockchip,pins = <3 13 RK_FUNC_GPIO &pcfg_pull_none>;
+                };
+        };
++
++       ds18b20_gpio{
++               ds18b20_gpio_ctrl:ds18b20-gpio-ctrl{
++                       rockchip,pins=<1 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
++               };
++       };
++
