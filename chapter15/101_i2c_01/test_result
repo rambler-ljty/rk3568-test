@@ -1,0 +1,5 @@
+[root@topeet:/]# cd /sys/firmware/devicetree/base/i2c@fe5a0000/
+[root@topeet:/sys/firmware/devicetree/base/i2c@fe5a0000]# ls
+'#address-cells'   clock-names   compatible   interrupts     name      pinctrl-0       reg
+'#size-cells'      clocks        gt1x@14      my-ft5x06@38   phandle   pinctrl-names   status
+[root@topeet:/sys/firmware/devicetree/base/i2c@fe5a0000]# 

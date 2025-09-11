@@ -1,0 +1,16 @@
+[root@topeet:/]# cd /sys/firmware/devicetree/base/i2c@fe5a0000/
+[root@topeet:/sys/firmware/devicetree/base/i2c@fe5a0000]# ls
+'#address-cells'   clock-names   compatible   interrupts     name      pinctrl-0       reg
+'#size-cells'      clocks        gt1x@14      my-ft5x06@38   phandle   pinctrl-names   status
+[root@topeet:/sys/firmware/devicetree/base/i2c@fe5a0000]# 
+
+
+[root@topeet:~]# cd 102_ft5x06_01/
+[root@topeet:~/102_ft5x06_01]# ls
+Makefile  ft5x06_driver.c  ft5x06_driver.ko
+[root@topeet:~/102_ft5x06_01]# insmod ft5x06_driver.ko 
+[  599.383370] ft5x06_driver: loading out-of-tree module taints kernel.
+[root@topeet:~/102_ft5x06_01]# [  599.384500] This is ft5x06 probe
+
+[root@topeet:~/102_ft5x06_01]# rmmod ft5x06_driver.ko 
+[root@topeet:~/102_ft5x06_01]# 

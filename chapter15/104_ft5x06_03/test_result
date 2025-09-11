@@ -1,0 +1,11 @@
+[root@topeet:~/104_ft5x06_03]# insmod 03_module/ft5x06_driver.ko 
+[  118.842049] ft5x06_driver: loading out-of-tree module taints kernel.
+[  118.843720] This is ft5x06 probe
+[root@topeet:~/104_ft5x06_03]# 
+[root@topeet:~/104_ft5x06_03]# 
+[root@topeet:~/104_ft5x06_03]# 
+[root@topeet:~/104_ft5x06_03]# rmmod ft5x06_driver.ko
+[root@topeet:~/104_ft5x06_03]#
+
+
+## note: do not have screen

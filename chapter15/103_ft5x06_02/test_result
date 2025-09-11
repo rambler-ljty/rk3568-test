@@ -1,0 +1,28 @@
+[root@topeet:~/103_ft5x06_02]# ls
+device  driver
+[root@topeet:~/103_ft5x06_02]# insmod device/ft5x06_device.ko 
+[  832.043672] i2c i2c-1: 1 i2c clients have been registered at 0x38
+[root@topeet:~/103_ft5x06_02]# 
+[root@topeet:~/103_ft5x06_02]# insmod driver/ft5x06_driver.ko 
+[  843.935704] This is ft5x06 probe
+[root@topeet:~/103_ft5x06_02]# [  843.936805] This is ft5x06 probe
+
+[root@topeet:~/103_ft5x06_02]#
+
+[root@topeet:~/103_ft5x06_02]# lsmod
+Module                  Size  Used by    Tainted: G  
+ft5x06_driver          16384  0 
+ft5x06_device          16384  0 
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/103_ft5x06_02]# rmmod ft5x06_device
+[root@topeet:~/103_ft5x06_02]# rmmod ft5x06_driver
+[root@topeet:~/103_ft5x06_02]# ls
+device  driver
+[root@topeet:~/103_ft5x06_02]# lsmod
+Module                  Size  Used by    Tainted: G  
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/103_ft5x06_02]#

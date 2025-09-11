@@ -1,0 +1,13 @@
+#### note   暂时没有外接屏幕，需要外接屏幕才能测试
+
+[root@topeet:~/105_ft5x06_04]# ls
+Makefile  ft5x06_driver.c  ft5x06_driver.ko
+[root@topeet:~/105_ft5x06_04]# insmod ft5x06_driver.ko 
+[  283.954792] irq: type mismatch, failed to map hwirq-5 for gpio@fe760000!
+[  283.954893] This is ft5x06 probe
+[  283.967577] request irq is error
+[root@topeet:~/105_ft5x06_04]# [  283.967707] my-ft5x06: probe of 1-0038 failed with error -2
+
+[root@topeet:~/105_ft5x06_04]# 
+[root@topeet:~/105_ft5x06_04]# rmmod ft5x06_driver.ko
+[root@topeet:~/105_ft5x06_04]# 

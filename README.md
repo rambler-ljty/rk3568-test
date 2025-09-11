@@ -23,3 +23,6 @@ chapter 12: gpio子系统
 chapter 13: 输入子系统
 
 chapter 14: 单总线
+
+chapter 15: I2C
+

@@ -1,0 +1,13 @@
+### no screen
+
+
+[root@topeet:~/106_ft5x06_05]# insmod module/ft5x06_driver.ko 
+[  521.950798] irq: type mismatch, failed to map hwirq-5 for gpio@fe760000!
+[  521.950895] This is ft5x06 probe
+[  521.950976] gpiod_direction_output: invalid GPIO (errorpointer)
+[root@topeet:~/106_ft5x06_05]# [  521.962165] gpiod_direction_output: invalid GPIO (errorpointer)
+[  521.962200] request irq is error
+[  521.962300] my-ft5x06: probe of 1-0038 failed with error -2
+
+
+## note: do not have screen

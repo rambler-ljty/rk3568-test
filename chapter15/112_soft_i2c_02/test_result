@@ -1,0 +1,15 @@
+### do not have screen
+
+[root@topeet:~/112_soft_i2c_02]# ls
+01_boot  module  test_result
+[root@topeet:~/112_soft_i2c_02]# 
+[root@topeet:~/112_soft_i2c_02]# ls /dev/i2c-*
+/dev/i2c-0  /dev/i2c-2  /dev/i2c-4  /dev/i2c-5  /dev/i2c-6
+[root@topeet:~/112_soft_i2c_02]# insmod module/ft5x06_driver.ko 
+[  140.388206] ft5x06_driver: loading out-of-tree module taints kernel.
+[root@topeet:~/112_soft_i2c_02]# [  140.389294] This is ft5x06 probe
+[  140.390570] reg 0x80 is fffffffb
+
+[root@topeet:~/112_soft_i2c_02]# 
+
+#### do not have screen

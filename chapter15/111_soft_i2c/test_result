@@ -1,0 +1,34 @@
+## do not have screen
+
+[root@topeet:/]# 
+[root@topeet:/]# ls /dev/i2c-*
+/dev/i2c-0  /dev/i2c-2  /dev/i2c-4  /dev/i2c-5
+[root@topeet:/]# 
+[root@topeet:/]# cat /sys/kernel/debug/pinctrl/pinctrl-rockchip-pinctrl/pinmux-pins 
+Pinmux settings per pin
+Format: pin (name): mux_owner gpio_owner hog?
+pin 0 (gpio0-0): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 1 (gpio0-1): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 2 (gpio0-2): 0-0020 (GPIO UNCLAIMED) function pmic group soc_slppin_gpio
+pin 3 (gpio0-3): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 4 (gpio0-4): fe2b0000.dwmmc (GPIO UNCLAIMED) function sdmmc0 group sdmmc0-det
+pin 5 (gpio0-5): vcc5v0-otg-regulator (GPIO UNCLAIMED) function usb group vcc5v0-otg-en
+pin 6 (gpio0-6): vcc5v0-host-regulator gpio0:6 function usb group vcc5v0-host-en
+pin 7 (gpio0-7): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 8 (gpio0-8): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 9 (gpio0-9): fdd40000.i2c (GPIO UNCLAIMED) function i2c0 group i2c0-xfer
+pin 10 (gpio0-10): fdd40000.i2c (GPIO UNCLAIMED) function i2c0 group i2c0-xfer
+pin 11 (gpio0-11): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 12 (gpio0-12): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 13 (gpio0-13): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 14 (gpio0-14): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+
+
+[root@topeet:~/111_soft_i2c]# cd module/
+[root@topeet:~/111_soft_i2c/module]# insmod ft5x06_driver.ko 
+[  252.999048] ft5x06_driver: loading out-of-tree module taints kernel.
+[  253.020120] send write+addr error
+[  253.043191] send write+addr error
+[root@topeet:~/111_soft_i2c/module]#
+
+## do not have screen
