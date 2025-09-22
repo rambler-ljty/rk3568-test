@@ -1,0 +1,12 @@
+##
+[root@topeet:~/chapter16/117_mcp2515_05/module]# insmod  mcp2515.ko 
+[root@topeet:~/chapter16/117_mcp2515_05/module]# 
+[root@topeet:~/chapter16/117_mcp2515_05/module]# 
+[root@topeet:~/chapter16/117_mcp2515_05/module]# lsmod 
+Module                  Size  Used by    Tainted: G  
+mcp2515                16384  0 
+rtk_btusb              57344  0 
+8723du               1560576  0 
+bcmdhd               1048576  0 
+[root@topeet:~/chapter16/117_mcp2515_05/module]# rmmod mcp2515.ko
+[root@topeet:~/chapter16/117_mcp2515_05/module]# 
