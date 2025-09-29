@@ -27,3 +27,5 @@ chapter 14: 单总线
 chapter 15: I2C
 
 chapter 16: SPI
+
+chapter 17: UART
